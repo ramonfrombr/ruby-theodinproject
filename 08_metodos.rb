@@ -1,6 +1,6 @@
 # MÉTODOS EMBUTIDOS
-"anything".reverse
-puts "anything" #=> anything
+"qualquer coisa".reverse
+puts "qualquer coisa" #=> qualquer coisa
 
 # CRIANDO UM MÉTODO
 def meu_nome
@@ -15,21 +15,21 @@ puts meu_nome    #=> "Pedro Silva"
 # metodo_27        # válido
 # metodo?_nome     # inválido
 # metodo_nome!     # válido
-#begin            # inválido (Palavra reservada do Ruby)
-# begin_2      # válido
+# begin            # inválido (Palavra reservada do Ruby)
+# begin_2          # válido
 
 # PARÂMETROS E ARGUMENTOS
 def saudacao(nome)
   "Olá, " + nome + "!"
 end
-puts saudacao("João") #=> Olá, João!
+puts saudacao("João")   #=> Olá, João!
 
-# PARÂMETROS PADRÃO
+# VALOR PADRÃO DE PARÂMETROS
 def saudacao(nome = "estranho")
   "Olá, " + nome + "!"
 end
-puts saudacao("Maria") #=> Olá, Maria!
-puts saudacao #=> Olá, estranho!
+puts saudacao("Maria")  #=> Olá, Maria!
+puts saudacao           #=> Olá, estranho!
 
 # O QUE MÉTODOS RETORNAM
 def meu_nome
@@ -37,11 +37,11 @@ def meu_nome
 end
 puts meu_nome #=> "Pedro Silva"
 
-# Retornando explicitamente
+# Retornando um valor explicitamente
 def meu_nome
   return "Pedro Silva"
 end
-puts meu_nome #=> "Pedro Silva"
+puts meu_nome           #=> "Pedro Silva"
 
 # Ruby retorna a última expressão avaliada mesmo sem o comando return
 def par_impar(numero)
@@ -81,6 +81,7 @@ def puts_quadrado(numero)
   puts numero * numero
 end # x = puts_quadrado(20), x terá valor 'nil'
 
+# Retorna o valor
 def return_quadrado(numero)
   numero * numero
 end
@@ -91,23 +92,20 @@ sum = x + y #=> 500
 puts "A soma de #{x} e #{y} é #{sum}."
 #=> A soma de 400 e 100 é 500.
 
-
 # COMBINANDO MÉTODOS
-
 frase = ["ser", "não", "ou", "ser"]
 puts frase.reverse.join(" ").capitalize
 #=> "Ser ou não ser"
 
-["ser", "não", "ou", "ser"].reverse
+# ["ser", "não", "ou", "ser"].reverse
 # = ["ser", "ou", "não", "ser"].join(" ")
 # = "ser ou não ser".capitalize
 # = "Ser ou não ser"
 
 # MÉTODOS PREDICADOS (RETORNAM VERDADEIRO OU FALSO)
-
-puts 5.even?  #=> false
-puts 6.even?  #=> true
-puts 17.odd?  #=> true
+puts 5.even?              #=> false
+puts 6.even?              #=> true
+puts 17.odd?              #=> true
 puts 12.between?(10, 15)  #=> true
 
 # MÉTODOS COM PONTO DE EXCLAMAÇÃO
@@ -123,4 +121,4 @@ sussurro = sussurro.downcase
 puts sussurro.downcase! #=> "olá todo mundo"
 puts sussurro #=> "olá todo mundo"
 
-# sussurro.downcase! é o mesmo que whisper = whisper.downcase
+# sussurro.downcase! é o mesmo que sussurro = sussurro.downcase

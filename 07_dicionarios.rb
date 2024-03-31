@@ -9,7 +9,7 @@ meu_dicionario = {
 meu_dicionario = Hash.new
 meu_dicionario               #=> {}
 
-# :seix é um símbolo
+# :seis é um símbolo
 dicionario = { 9 => "nove", :seis => 6 }
 
 # ACESSANDO VALORES
@@ -29,17 +29,15 @@ sapatos     #=> {"verão"=>"sandalhas", "inverno"=>"botas", "outono"=>"tênis"}
 sapatos["verão"] = "chinelo"
 sapatos     #=> {"verão"=>"chinelo", "inverno"=>"botas", "outono"=>"tênis"}
 
-
 # REMOVENDO DADOS
 sapatos.delete("verão")    #=> "chinelo"
-sapatos                     #=> {"inverno"=>"botas", "outono"=>"tênis"}
+sapatos                    #=> {"inverno"=>"botas", "outono"=>"tênis"}
 
 # MÉTODOS
 livros = {
   "Capitães de Areia" => "Jorge Amado",
   "O Guarani" => "José de Alencar"
 }
-
 livros.keys      #=> ["Infinite Jest", "Into the Wild"]
 livros.values    #=> ["David Foster Wallace", "Jon Krakauer"]
 

@@ -8,145 +8,144 @@
 # all?
 # none?
 
-# MÉTODO include?
+# MÉTODO include? (inclui?)
 
-numbers = [5, 6, 7, 8]
-
-element = 6
-result = false
-numbers.each do |number|
-  if number == element
-    result = true
+numeros = [5, 6, 7, 8]
+elemento = 6
+resultado = false
+numeros.each do |numero|
+  if numero == elemento
+    resultado = true
     break
   end
 end
-result
+puts resultado
 # => true
 
-element = 3
-result = false
-numbers.each do |number|
-  if number == element
-    result = true
+elemento = 3
+resultado = false
+numeros.each do |numero|
+  if numero == elemento
+    resultado = true
     break
   end
 end
-result
+puts resultado
 #=> false
 
 # Nos exemplos acima existe um comando break na condição if para que a repetição pare assim que o número for encontrado
 
 # Usar o método include? torna o código acima mais simplificado
-numbers = [5, 6, 7, 8]
-numbers.include?(6)
+numeros = [5, 6, 7, 8]
+numeros.include?(6)
 #=> true
-numbers.include?(3)
+numeros.include?(3)
 #=> false
 
-friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
-invited_list = friends.select { |friend| friend != 'Brian' }
-invited_list.include?('Brian')
+amigos = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
+lista_de_convidados = amigos.select { |amigo| amigo != 'Brian' }
+lista_de_convidados.include?('Brian')
 #=> false
 
-# MÉTODO any?
+# MÉTODO any? (algum?)
 
-numbers = [21, 42, 303, 499, 550, 811]
-result = false
-numbers.each do |number|
-  if number > 500
-    result = true
+numeros = [21, 42, 303, 499, 550, 811]
+resultado = false
+numeros.each do |numero|
+  if numero > 500
+    resultado = true
     break
   end
 end
-result
+puts resultado
 #=> true
 
-numbers = [21, 42, 303, 499, 550, 811]
-result = false
-numbers.each do |number|
-  if number < 20
-    result = true
+numeros = [21, 42, 303, 499, 550, 811]
+resultado = false
+numeros.each do |numero|
+  if numero < 20
+    resultado = true
     break
   end
 end
-result
+puts resultado
 #=> false
 
 # Usar o método any? permite checar se algum elemento satisfaz a condição dentro do bloco
-numbers = [21, 42, 303, 499, 550, 811]
-numbers.any? { |number| number > 500 }
+numeros = [21, 42, 303, 499, 550, 811]
+numeros.any? { |numero| numero > 500 }
 #=> true
-numbers.any? { |number| number < 20 }
+numeros.any? { |numero| numero < 20 }
 #=> false
 
-# MÉTODO all?
+# MÉTODO all? (todos?)
 
 # O método all? retorna true se todos os elementos do vetor ou dicionário satisfazem a condição definida dentro do bloco. Senão, retorna false
 
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-matches = []
-result = false
-fruits.each do |fruit|
-  if fruit.length > 3
-    matches.push(fruit)
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+correspondentes = []
+resultado = false
+frutas.each do |fruta|
+  if fruta.length > 3
+    correspondentes.push(fruta)
   end
 end
-result = fruits.length == matches.length
-result
+resultado = frutas.length == correspondentes.length
+puts resultado
 #=> true
 
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-matches = []
-result = false
-fruits.each do |fruit|
-  if fruit.length > 6
-    matches.push(fruit)
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+correspondentes = []
+resultado = false
+frutas.each do |fruta|
+  if fruta.length > 6
+    correspondentes.push(fruta)
   end
 end
-result = fruits.length == matches.length
-result
+resultado = frutas.length == correspondentes.length
+puts resultado
 #=> false
 
 # Usar o método all? torna o código acima simplificado
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-fruits.all? { |fruit| fruit.length > 3 }
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+frutas.all? { |fruta| fruta.length > 3 }
 #=> true
-fruits.all? { |fruit| fruit.length > 6 }
+frutas.all? { |fruta| fruta.length > 6 }
 #=> false
 
 # O método #all? vai retornar true por padrão ao menos que o bloco retorne 'false' ou 'nil'. Se você chamar o método #all? em um vetor ou dicionário vazio, ele retorna 'true'
 
-# MÉTODO none?
+# MÉTODO none? (nenhum?)
 
 # O método #none? retorna 'true' apenas se a condição dentro do bloco satisfaz nenhum dos elementos do vetor ou dicionário. Senão, retorna falso. 'none' significa 'nenhum' em inglês
 
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-result = false
-fruits.each do |fruit|
-  if fruit.length > 10
-    result = false
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+resultado = false
+frutas.each do |fruta|
+  if fruta.length > 10
+    resultado = false
     break
   end
-  result = true
+  resultado = true
 end
-result
+puts resultado
 #=> true
 
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-result = false
-fruits.each do |fruit|
-  if fruit.length > 6
-    result = false
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+resultado = false
+frutas.each do |fruta|
+  if fruta.length > 6
+    resultado = false
     break
   end
-  result = true
+  resultado = true
 end
-result
+puts resultado
 #=> false
 
 # Usar o método #none? torna o código acima simplificado
-fruits = ["apple", "banana", "strawberry", "pineapple"]
-fruits.none? { |fruit| fruit.length > 10 }
+frutas = ["maçã", "banana", "morango", "abacaxi"]
+frutas.none? { |fruta| fruta.length > 10 }
 #=> true
-fruits.none? { |fruit| fruit.length > 6 }
+frutas.none? { |fruta| fruta.length > 6 }
 #=> false

@@ -1,15 +1,15 @@
 require 'pry-byebug'
 
-def yell_greeting(string)
-  name = string
+def gritar_saudacao(string)
+  nome = string
 
   binding.pry
 
-  name = name.upcase
-  greeting = "WASSAP, #{name}!"
-  puts greeting
+  nome = nome.upcase
+  saudacao = "WASSAP, #{nome}!"
+  puts saudacao
 end
 
-yell_greeting("bob")
+gritar_saudacao("bob")
 
 # next
